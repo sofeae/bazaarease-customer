@@ -9,8 +9,8 @@ async function main() {
     try {
         await client.connect();
 
-        const productsCollection = client.db("food-ordering").collection("products");
-        const categoriesCollection = client.db("food-ordering").collection("categories");
+        const productsCollection = client.db("bazaarease").collection("products");
+        const categoriesCollection = client.db("bazaarease").collection("categories");
 
         let categories = ['breakfast', 'lunch', 'dinner', 'drinks'].map((category) => { return { name: category } });
         await categoriesCollection.insertMany(categories);
@@ -22,7 +22,7 @@ async function main() {
         ]
 
         let products = [];
-        for (let i = 0; i < 10; i+=1) {
+        for (let i = 0; i <10; i+=1) {
             let newProduct = {
                 name: faker.commerce.productName(),
                 adjective: faker.commerce.productAdjective(),
@@ -41,4 +41,4 @@ async function main() {
     }
 }
 
-main();
+main(); 

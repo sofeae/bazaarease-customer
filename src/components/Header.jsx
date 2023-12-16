@@ -6,35 +6,9 @@ import { Link } from "react-router-dom";
 // import { useEffect, useState } from "react";
 
 export const Header = ({ cartCount }) => {
-    // const navigate = useNavigate();
-    // const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-    // const handleLogout = () => {
-    //     sessionStorage.removeItem('Auth token');
-    //     sessionStorage.removeItem('User Id');
-    //     window.dispatchEvent(new Event("storage"))
-    //     navigate("/");
-    // }
-
-    // useEffect(() => {
-    //     const checkAuthToken = () => {
-    //         const token = sessionStorage.getItem('Auth token');
-    //         if (token) {
-    //             setIsLoggedIn(true);
-    //         } else {
-    //             setIsLoggedIn(false);
-    //         }
-    //     }
-
-    //     window.addEventListener('storage', checkAuthToken);
-
-    //     return () => {
-    //         window.removeEventListener('storage', checkAuthToken);
-    //     }
-    // }, [])
 
     return (
-        <nav id="header" className="bg-black text-white">
+        <nav id="header" className="background-white text-black border-b-2 border-black-300">
             <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
                 <div className="logo-wrapper pl-4 flex items-center">
                     <Link to="/" className="toggleColor text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl">
