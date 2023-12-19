@@ -9,8 +9,8 @@ async function main() {
     try {
         await client.connect();
 
-        const productsCollection = client.db("bazaarease").collection("products");
-        const categoriesCollection = client.db("bazaarease").collection("categories");
+        const productsCollection = client.db("food-ordering").collection("products");
+        const categoriesCollection = client.db("food-ordering").collection("categories");
 
         let categories = ['breakfast', 'lunch', 'dinner', 'drinks'].map((category) => { return { name: category } });
         await categoriesCollection.insertMany(categories);
@@ -19,6 +19,7 @@ async function main() {
             'https://res.cloudinary.com/dlv0lekro/image/upload/v1657056151/food-ordering-app/1_mfgcb5.png',
             'https://res.cloudinary.com/dlv0lekro/image/upload/v1657056151/food-ordering-app/2_afbbos.png',
             'https://res.cloudinary.com/dlv0lekro/image/upload/v1657056151/food-ordering-app/3_iawvqb.png',
+            'https://png.pngtree.com/png-clipart/20230914/original/pngtree-holiday-bazaar-vector-png-image_11399273.png',
         ]
 
         let products = [];

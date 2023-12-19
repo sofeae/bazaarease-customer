@@ -48,20 +48,24 @@ const PaymentForm = () => {
                 })
             }).then(r => r.json());
 
-            const { error: stripeError, paymentIntent } = await stripe.confirmCardPayment(
-                clientSecret, {
-                    payment_method: {
-                        card: elements.getElement(CardElement)
-                    }
-                }
-            )
-            if (backeEndError || stripeError) {
-                setError(backeEndError || stripeError)
-            } else if (paymentIntent.status === 'succeeded') {
                 dispatch(clearAddress());
                 dispatch(clearCart());
                 navigate('/payment-success');
-            }
+
+            // const { error: stripeError, paymentIntent } = await stripe.confirmCardPayment(
+            //     clientSecret, {
+            //         payment_method: {
+            //             card: elements.getElement(CardElement)
+            //         }
+            //     }
+            // )
+            // if (backeEndError || stripeError) {
+            //     setError(backeEndError || stripeError)
+            // } else if (paymentIntent.status === 'succeeded') {
+            //     dispatch(clearAddress());
+            //     dispatch(clearCart());
+            //     navigate('/payment-success');
+            // }
 
         } catch(err) {
             console.log(err);

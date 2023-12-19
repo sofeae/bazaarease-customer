@@ -7,7 +7,7 @@ export const ProductPreviewCard = ({ product, onAddProduct }) => {
     }
 
     return (
-        <div className="w-full p-4 m-2 rounded text-white bg-black text-center">
+        <div className="w-full p-4 m-2 rounded text-white bg-black text-center" style = {{backgroundColor: "black"}}>
             <img src={product.imageUrl} alt={product.name} />
             <h1>hehehe</h1>
             <h2 className="pb-2 text-lg">{product.name}</h2>
